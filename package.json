@@ -1,0 +1,8 @@
+{
+  "name": "studyflow-root-proxy",
+  "private": true,
+  "scripts": {
+    "build": "cd studyflow && npm install && npm run build",
+    "install": "cd studyflow && npm install"
+  }
+}
