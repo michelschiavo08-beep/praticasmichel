@@ -1,0 +1,169 @@
+/* ==========================================
+   StudyFlow — Schedule Page Styles
+   ========================================== */
+
+.sched-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+.sched-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.sched-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid var(--border-color);
+}
+.sched-nav-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+.sched-period {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-bold);
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Weekly Calendar Grid */
+.sched-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+.sched-day {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  min-height: 180px;
+  transition: all var(--transition-fast);
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+.sched-day:hover {
+  border-color: var(--border-color-strong);
+}
+.sched-day--today {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 1px var(--accent-primary-light);
+}
+.sched-day-header {
+  text-align: center;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-color);
+}
+.sched-day-name {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.5px;
+}
+.sched-day-number {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-bold);
+  line-height: 1.3;
+}
+.sched-day--today .sched-day-number {
+  color: var(--accent-primary);
+}
+
+.sched-session {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-left: 3px solid;
+  position: relative;
+}
+.sched-session:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-sm);
+}
+.sched-session-name {
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sched-session-time {
+  color: var(--text-tertiary);
+  font-size: 10px;
+}
+.sched-session--completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Goals section */
+.sched-goals {
+  margin-top: var(--space-8);
+}
+.sched-goals-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+}
+.sched-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+.sched-goal-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+.sched-goal-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.sched-goal-name {
+  font-weight: var(--font-semibold);
+  font-size: var(--font-size-sm);
+  flex: 1;
+}
+.sched-goal-pct {
+  font-weight: var(--font-bold);
+  font-size: var(--font-size-sm);
+  color: var(--accent-primary);
+}
+
+/* Session form */
+.sched-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+  .sched-week {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .sched-week {
+    grid-template-columns: 1fr;
+  }
+}

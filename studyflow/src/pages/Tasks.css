@@ -1,0 +1,107 @@
+/* ==========================================
+   StudyFlow — Tasks Page Styles
+   ========================================== */
+
+.tasks-filters {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.tasks-group {
+  margin-bottom: var(--space-8);
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+.tasks-group:nth-child(1) { animation-delay: 0ms; }
+.tasks-group:nth-child(2) { animation-delay: 100ms; }
+.tasks-group:nth-child(3) { animation-delay: 200ms; }
+.tasks-group:nth-child(4) { animation-delay: 300ms; }
+
+.tasks-group-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-bold);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.tasks-group-count {
+  background: var(--bg-tertiary);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-semibold);
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-3);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+.task-card:hover {
+  border-color: var(--border-color-strong);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+.task-card--completed {
+  opacity: 0.5;
+}
+.task-card--completed .task-title {
+  text-decoration: line-through;
+}
+
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+.task-title {
+  font-weight: var(--font-semibold);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-1);
+}
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+.task-subject-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-medium);
+}
+.task-deadline--urgent {
+  color: var(--danger);
+  font-weight: var(--font-semibold);
+}
+.task-actions {
+  display: flex;
+  gap: var(--space-2);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+.task-card:hover .task-actions {
+  opacity: 1;
+}
+
+/* Task form */
+.task-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}

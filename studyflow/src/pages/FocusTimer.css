@@ -1,0 +1,115 @@
+/* ==========================================
+   StudyFlow — Focus Timer Page Styles
+   ========================================== */
+
+.focus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-8);
+  animation: fadeInUp 0.5s ease;
+}
+
+.focus-timer-ring {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.focus-timer-ring svg {
+  transform: rotate(-90deg);
+}
+.focus-timer-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.focus-time {
+  font-size: 56px;
+  font-weight: var(--font-extrabold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -2px;
+}
+.focus-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-top: var(--space-2);
+}
+
+.focus-subject {
+  text-align: center;
+}
+.focus-subject-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.focus-controls {
+  display: flex;
+  gap: var(--space-4);
+}
+.focus-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+.focus-btn:hover {
+  transform: scale(1.1);
+}
+.focus-btn--play {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: var(--shadow-glow);
+  width: 72px;
+  height: 72px;
+}
+.focus-btn--secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.focus-setup {
+  text-align: center;
+  animation: fadeInUp 0.5s ease;
+}
+.focus-setup-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--space-2);
+}
+.focus-setup-desc {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+}
+.focus-setup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Pulse animation for active timer */
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.focus-time--running {
+  animation: timerPulse 2s ease-in-out infinite;
+}

@@ -1,0 +1,213 @@
+/* ==========================================
+   StudyFlow — Notes Page Styles
+   ========================================== */
+
+.notes-subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+.notes-subject-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  text-align: center;
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+.notes-subject-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.notes-subject-card--active {
+  border-color: white;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.notes-subject-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-2);
+}
+.notes-subject-name {
+  font-weight: var(--font-bold);
+  color: white;
+  font-size: var(--font-size-base);
+}
+.notes-subject-count {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.7);
+  margin-top: var(--space-1);
+}
+
+/* Notes list */
+.notes-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-5);
+  min-height: 400px;
+}
+.notes-list {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.notes-list-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.notes-list-title {
+  font-weight: var(--font-bold);
+  font-size: var(--font-size-base);
+}
+.notes-list-items {
+  max-height: 500px;
+  overflow-y: auto;
+}
+.note-list-item {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.note-list-item:hover {
+  background: var(--bg-tertiary);
+}
+.note-list-item--active {
+  background: var(--accent-primary-light);
+  border-right: 3px solid var(--accent-primary);
+}
+.note-list-item-title {
+  font-weight: var(--font-semibold);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-1);
+}
+.note-list-item-preview {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.note-list-item-date {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  margin-top: var(--space-1);
+}
+
+/* Editor area */
+.notes-editor {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.notes-editor-toolbar {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+.notes-editor-toolbar button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.notes-editor-toolbar button:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+.notes-editor-toolbar button.active {
+  background: var(--accent-primary-light);
+  color: var(--accent-primary);
+}
+
+.notes-editor-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.notes-editor-title-input {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-bold);
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  width: 100%;
+  outline: none;
+}
+
+.notes-editor .ProseMirror {
+  padding: var(--space-5);
+  min-height: 300px;
+  outline: none;
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  flex: 1;
+}
+.notes-editor .ProseMirror h1 { font-size: var(--font-size-2xl); font-weight: var(--font-bold); margin-bottom: var(--space-3); }
+.notes-editor .ProseMirror h2 { font-size: var(--font-size-xl); font-weight: var(--font-bold); margin-bottom: var(--space-2); }
+.notes-editor .ProseMirror h3 { font-size: var(--font-size-lg); font-weight: var(--font-semibold); margin-bottom: var(--space-2); }
+.notes-editor .ProseMirror p { margin-bottom: var(--space-3); }
+.notes-editor .ProseMirror ul, .notes-editor .ProseMirror ol {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+.notes-editor .ProseMirror li { margin-bottom: var(--space-1); }
+.notes-editor .ProseMirror strong { font-weight: var(--font-bold); }
+.notes-editor .ProseMirror em { font-style: italic; }
+.notes-editor .ProseMirror img {
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  margin: var(--space-4) 0;
+}
+.notes-editor .ProseMirror .is-editor-empty::before {
+  content: attr(data-placeholder);
+  color: var(--text-tertiary);
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+/* Search */
+.notes-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.notes-search input {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  outline: none;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .notes-content { grid-template-columns: 1fr; }
+}

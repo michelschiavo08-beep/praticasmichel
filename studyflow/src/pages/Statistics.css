@@ -1,0 +1,128 @@
+/* ==========================================
+   StudyFlow — Statistics Page Styles
+   ========================================== */
+
+.stats-period {
+  margin-bottom: var(--space-6);
+}
+
+.stats-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.stats-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+.stats-card-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--space-1);
+}
+.stats-card-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.stats-charts {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.stats-chart-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+.stats-chart-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-5);
+}
+
+/* Streak section */
+.stats-streak {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  text-align: center;
+  color: white;
+  margin-bottom: var(--space-8);
+  animation: fadeInUp 0.5s ease 0.3s forwards;
+  opacity: 0;
+}
+.stats-streak-icon {
+  font-size: 48px;
+  animation: fireGlow 2s ease-in-out infinite;
+  margin-bottom: var(--space-3);
+}
+.stats-streak-value {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-extrabold);
+}
+.stats-streak-label {
+  font-size: var(--font-size-base);
+  opacity: 0.85;
+}
+
+/* Planned vs Actual table */
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+.stats-table th {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: var(--font-semibold);
+}
+.stats-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+.stats-table tr:last-child td { border: none; }
+.stats-diff--positive { color: var(--success); font-weight: var(--font-semibold); }
+.stats-diff--negative { color: var(--danger); font-weight: var(--font-semibold); }
+
+/* Completion rate circle */
+.stats-completion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+.stats-circle-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+.stats-circle-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-extrabold);
+}
+
+@media (max-width: 1200px) {
+  .stats-overview { grid-template-columns: repeat(2, 1fr); }
+  .stats-charts { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .stats-overview { grid-template-columns: 1fr; }
+}
